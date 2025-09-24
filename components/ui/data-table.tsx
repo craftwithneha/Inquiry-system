@@ -192,7 +192,7 @@ export function DataTable<TData, TValue>({
           ) : (
             <Button
               onClick={onAddClick}
-              variant="orange"
+              variant="default"
               className="w-full sm:w-auto"
             >
               {addButtonText}
