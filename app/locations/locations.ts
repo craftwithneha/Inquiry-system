@@ -1,4 +1,3 @@
-
 // types + dummy data
 
 export type Location = {
@@ -22,7 +21,7 @@ export type Location = {
 export const locations: Location[] = [
   {
     id: "1",
-    image: "/location1.jpg",
+    image: "", // 👈 empty (we’ll always show placeholder instead)
     mapLink: "https://maps.google.com",
     name: "Beach Resort",
     inquiries: 12,
@@ -39,7 +38,7 @@ export const locations: Location[] = [
   },
   {
     id: "2",
-    image: "/location2.jpg",
+    image: "",
     mapLink: "https://maps.google.com",
     name: "Mountain Hall",
     inquiries: 6,
@@ -56,7 +55,7 @@ export const locations: Location[] = [
   },
   {
     id: "3",
-    image: "/location3.jpg",
+    image: "",
     mapLink: "https://maps.google.com",
     name: "City Banquet Hall",
     inquiries: 18,
@@ -73,7 +72,7 @@ export const locations: Location[] = [
   },
   {
     id: "4",
-    image: "/location4.jpg",
+    image: "",
     mapLink: "https://maps.google.com",
     name: "Lakeside Pavilion",
     inquiries: 9,
@@ -90,7 +89,7 @@ export const locations: Location[] = [
   },
   {
     id: "5",
-    image: "/location5.jpg",
+    image: "",
     mapLink: "https://maps.google.com",
     name: "Skyline Terrace",
     inquiries: 14,
@@ -111,7 +110,7 @@ export const locations: Location[] = [
 for (let i = 6; i <= 60; i++) {
   locations.push({
     id: i.toString(),
-    image: `/location${i}.jpg`,
+    image: "", // 👈 empty (no fake images, will use placeholder)
     mapLink: "https://maps.google.com",
     name: `Venue ${i}`,
     inquiries: Math.floor(Math.random() * 20) + 1,

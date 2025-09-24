@@ -5,7 +5,6 @@ import { Location } from "./locations"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Edit, Trash, MapPin, ArrowUpDown } from "lucide-react"
-import Image from "next/image"
 
 export const columns: ColumnDef<Location>[] = [
   {
@@ -24,18 +23,11 @@ export const columns: ColumnDef<Location>[] = [
   {
     accessorKey: "image",
     header: "Image",
-    cell: ({ row }) => {
-      const image = row.getValue("image") as string
-      return (
-        <Image
-          src={image}
-          alt="Location"
-          width={45}
-          height={45}
-          className="rounded-md object-cover"
-        />
-      )
-    },
+    cell: () => (
+      <div className="w-[100px] h-[100px] flex items-center justify-center border border-gray-300 rounded bg-gray-100 text-gray-500 text-xs">
+        100 × 100
+      </div>
+    ),
   },
   {
     accessorKey: "mapLink",
@@ -156,7 +148,7 @@ export const columns: ColumnDef<Location>[] = [
     cell: ({ row }) => {
       const attrs = row.getValue("attributes") as string[]
       return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {attrs.map((attr, i) => (
             <Badge key={i} variant="outline" className="px-2 py-1">
               {attr}
@@ -172,7 +164,7 @@ export const columns: ColumnDef<Location>[] = [
     cell: ({ row }) => {
       const types = row.getValue("eventTypes") as string[]
       return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {types.map((type, i) => (
             <Badge key={i} variant="secondary" className="px-2 py-1">
               {type}
